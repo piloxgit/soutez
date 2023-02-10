@@ -6,7 +6,13 @@ int ledBar[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
 void setup() {
   for (int i = 0; i < bits; i++) {
     pinMode(ledBar[i], OUTPUT);
+    digitalWrite(ledBar[i], HIGH);
+    delay(50);
+  }
+  delay(500);
+  for (int i = 0; i < bits; i++) {
     digitalWrite(ledBar[i], LOW);
+    delay(50);
   }
   Serial.begin(9600);
   Serial.println("Zadejte číslo v intervalu <0,1023>:  ");
